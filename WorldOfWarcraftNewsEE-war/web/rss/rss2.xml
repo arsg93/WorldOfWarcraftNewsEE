@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>News World of Warcraft</title>
+<link>https://rawgit.com/arsg93/Noticias/master/news.html</link>
+<description>Ultimas noticias y novedades sobre World of Warcraft.</description>
+<item>
+<title>¡El parche 7.2: Ya está disponible!</title>
+<link>https://rawgit.com/arsg93/Noticias/master/news1.html</link>
+<description>Durante el parte 7.2 podremos realizar la segunda y última parte del proceso para poder volar
+                                    en Legion donde deberemos conseguir el logro Abrecaminos de Legion Abrecaminos de las
+                                    Islas Abruptas, segunda parte.</description>
+<pubDate>Tue, 28 Feb 2017 08:00:00 EST</pubDate>
+</item>
+<item>
+<title>¡Este mes de Mayo en WoW tenemos...!</title>
+<link>https://rawgit.com/arsg93/Noticias/master/news2.html</link>
+<description>El tiempo vuela cuando estás luchando contra la Legión Ardiente. A pesar de que la sombra
+                                    de la Nave de la Legión sea enorme, los campeones de Azeroth siguen luchando y aún quedan
+                                    buenos momentos por vivir, no te lo pierdas.</description>
+<pubDate>Tue, 28 Feb 2017 08:00:00 EST</pubDate>
+</item>
+<item>
+<title>Avance: Bastión Nocturno</title>
+<link>https://rawgit.com/arsg93/Noticias/master/news3.html</link>
+<description>Ocultas en los cimientos , yacen las olvidadas cámaras que dan acceso a la Fuente de la Noche.
+                                Este monstruoso escórpido ha escogido una de estas cámaras como su hogar. Imbuido del poder
+                                de la Fuente de la Noche, Skorpyron supone un obstáculo en la que sería una prometedora entrada
+                                trasera.</description>
+<pubDate>Tue, 28 Feb 2017 08:00:00 EST</pubDate>
+</item>
+<item>
+<title>Ha llegado el Festival Lunar</title>
+<link>https://rawgit.com/arsg93/Noticias/master/news4.html</link>
+<description>Cada año los druidas del Claro de la Luna celebran el gran triunfo de su ciudad sobre un antiguo
+                                mal. Durante el Festival Lunar los ciudadanos de Azeroth tienen la oportunidad de rendir
+                                homenaje a sus ancestros celebrando su sabiduría con magníficos festines y, por supuesto,
+                                ¡lanzando fuegos artificiales!</description>
+<pubDate>Tue, 28 Feb 2017 08:00:00 EST</pubDate>
+</item>
+</channel>
+</rss>

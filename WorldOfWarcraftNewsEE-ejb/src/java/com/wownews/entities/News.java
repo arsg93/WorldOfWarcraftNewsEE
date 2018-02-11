@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -37,7 +38,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "News.findByDescription", query = "SELECT n FROM News n WHERE n.description = :description")
     , @NamedQuery(name = "News.findByDate", query = "SELECT n FROM News n WHERE n.date = :date")
     , @NamedQuery(name = "News.findByUsername", query = "SELECT n FROM News n WHERE n.username = :username")
-    , @NamedQuery(name = "News.findByImage", query = "SELECT n FROM News n WHERE n.image = :image")})
+    , @NamedQuery(name = "News.findByImage", query = "SELECT n FROM News n WHERE n.image = :image")
+    , @NamedQuery(name = "News.getByDate", query = "SELECT n FROM News n ORDER BY n.date DESC")})
 public class News implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -46,12 +48,12 @@ public class News implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Long id;
-    @Size(max = 100)
+    @Size(max = 150)
     @Column(name = "slug")
     private String slug;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 30)
+    @Size(min = 1, max = 100)
     @Column(name = "title")
     private String title;
     @Basic(optional = false)
@@ -62,6 +64,11 @@ public class News implements Serializable {
     @Column(name = "date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
+
+    @PrePersist
+    protected void onCreate() {
+        date = new Date();
+    }
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
@@ -165,5 +172,5 @@ public class News implements Serializable {
     public String toString() {
         return "com.wownews.entities.News[ id=" + id + " ]";
     }
-    
+
 }

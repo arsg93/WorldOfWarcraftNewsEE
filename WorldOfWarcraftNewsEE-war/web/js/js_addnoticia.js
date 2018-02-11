@@ -147,13 +147,13 @@ function initTextArea() {
         max_height: 500,
         menubar: true,
         themes: "modern",
+       
 
         plugins: [
-            'advlist autolink lists link charmap print preview anchor textcolor',
-            'searchreplace visualblocks code',
-            ' media contextmenu paste code help wordcount'
+            'anchor textcolor',           
+            ' media'
         ],
-        toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+        toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat ',
         content_css: [
             '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
             '//www.tinymce.com/css/codepen.min.css']
@@ -163,22 +163,13 @@ function initTextArea() {
 ;
 
 function addNoticia() {
-//    var url = "AddNoticia";
-//    var t = $("#title").val();
-//    var i = $(".input-ghost").files[0];
-//    var c = tinyMCE.activeEditor.getContent();
     $("#divCargando").fadeIn(400);
-    //stop submit the form, we will post it manually.
     event.preventDefault();
 
-    // Get form
     var form = $('#formAddNoticia')[0];
 
-    // Create an FormData object
     var data = new FormData(form);
 
-
-    // disabled the submit button
     $("#bAddNoticia").prop("disabled", true);
 
     $.ajax({
@@ -187,9 +178,10 @@ function addNoticia() {
         url: "AddNoticia",
         data: data,
         processData: false,
-        contentType: false,
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         cache: false,
         timeout: 600000,
+        
         success: function (rsp) {
             $("#divCargando").fadeOut(400);
             showToast("Successfull", rsp["mess"], "success", "#36B62D");

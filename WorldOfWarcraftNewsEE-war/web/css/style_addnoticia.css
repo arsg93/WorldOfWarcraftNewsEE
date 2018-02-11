@@ -67,32 +67,6 @@
     #logo {
         height: 150px;
     }
-    .publicidadhor {
-        position: relative;
-        float: right;
-        width: 300px;
-        top: 125px;
-        right: 25px;
-    }
-    .publicidadver {
-        display: none;
-    }
-    .thumbnail {
-        background: #1C1001 !important;
-        border: solid grey 2px !important;
-    }
-    .thumbnail h1 {
-        color: #ebdec2 !important;
-        font-family: 'Lato', sans-serif !important;
-    }
-    .thumbnail p {
-        color: #ebdec2 !important;
-        font-family: 'Lato', sans-serif !important;
-    }
-    .thumbnail li {
-        color: #ebdec2 !important;
-        font-family: 'Lato', sans-serif !important;
-    }
     .btn {
         background: #1C1001 !important;
         color: #ebdec2 !important;
@@ -104,21 +78,46 @@
         border: solid gold 2px !important;
         -webkit-transition: all .6s ease;
     }
-    .twitter {
-        position: relative;
-        float: right;
-        top: 150px;
-        right: 25px;
+    #divCargando {
+        z-index: 99;
+        background-color:rgba(150, 64, 12, 0.35);
+        position: fixed;
+        width: 100%;
+        height: 100%; 
     }
-    .thumbnail {
-        position: relative;
+
+    #divCargando div {
+        width: 100%;
+        height: 100%;
+        text-align:center; 
+        display: table;
+    }
+
+    #divCargando div div {
+        display:table-cell;
+        vertical-align:middle
     }
     #noticias {
-        position: relative;
-        float: left;
-        width: calc(100% - 380px);
-        top: 125px;
-        left: 25px;
+        border: solid red;
+        background: black;
+        width: 90%;
+        padding: 25px;
+        margin: auto; 
+        margin-top: 125px;
+    }
+    #imgUpload{
+        padding: 25px;
+    }
+    #bAddNoticia{
+        padding: 25px;
+    }
+
+    #dTitle{
+        padding: 25px;
+    }
+
+    #contenido{
+        padding: 25px;
     }
     .imgNoticia {
         width: 100% !important;
@@ -147,6 +146,12 @@
         filter: grayscale(100%);
         -webkit-filter: grayscale(100%);
         filter: white;
+    }
+    .titulo {
+        text-transform: uppercase;
+        background: -webkit-linear-gradient(#eee, gold);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     .seguirtitulo {
         vertical-align: middle;
@@ -232,12 +237,6 @@
         .navbar-nav > li > a {
             line-height: 15px !important;
         }
-        .publicidadver {
-            position: relative;
-            width: 100%;
-            height: 90px;
-            top: 75px;
-        }
         .blanco:hover {
             background: -webkit-linear-gradient(#eee, #eee);
             -webkit-background-clip: text;
@@ -261,7 +260,7 @@
         color: #ebdec2 !important;
         font-family: 'Lato', sans-serif !important;
     }
-        .btn {
+    .btn {
         background: #1C1001 !important;
         color: #ebdec2 !important;
         border: solid grey 2px !important;
@@ -272,21 +271,49 @@
         border: solid gold 2px !important;
         -webkit-transition: all .6s ease;
     }
-    .twitter {
-        display: none;
-    }
-    .publicidadver {
-        position: relative;
+    #divCargando {
+        z-index: 99;
+        background-color:rgba(150, 64, 12, 0.35);
+        position: fixed;
         width: 100%;
-        height: 90px;
-        top: 125px;
+        height: 100%; 
     }
-    .publicidadhor {
-        display: none;
+    
+
+    #divCargando div {
+        width: 100%;
+        height: 100%;
+        text-align:center; 
+        display: table;
     }
+
+    #divCargando div div {
+        display:table-cell;
+        vertical-align:middle
+    }
+
     #noticias {
-        position: relative;
-        top: 150px;
+        border: solid red;
+        background: black;
+        width: 90%;
+        padding: 25px;
+        margin: auto; 
+        margin-top: 125px;
+
+    }
+    #bAddNoticia{
+        padding: 25px;
+    }
+    #imgUpload{
+        padding: 25px;
+    }
+
+    #dTitle{
+        padding: 25px;
+    }
+
+    #contenido{
+        padding: 25px;
     }
     .footer {
         height: 180px;
@@ -310,6 +337,13 @@
         -webkit-filter: grayscale(100%);
         filter: white;
     }
+    .titulo {
+        text-transform: uppercase;
+        background: -webkit-linear-gradient(#eee, gold);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
     .seguirtitulo {
         padding-top: 40px;
         vertical-align: middle;

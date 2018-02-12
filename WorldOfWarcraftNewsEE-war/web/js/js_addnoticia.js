@@ -146,11 +146,12 @@ function initTextArea() {
         height: 300,
         max_height: 500,
         menubar: true,
+        entity_encoding: "raw",
+        encoding: "UTF-8",
         themes: "modern",
-       
 
         plugins: [
-            'anchor textcolor',           
+            'anchor textcolor',
             ' media'
         ],
         toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat ',
@@ -178,10 +179,10 @@ function addNoticia() {
         url: "AddNoticia",
         data: data,
         processData: false,
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        contentType: false,
         cache: false,
         timeout: 600000,
-        
+
         success: function (rsp) {
             $("#divCargando").fadeOut(400);
             showToast("Successfull", rsp["mess"], "success", "#36B62D");

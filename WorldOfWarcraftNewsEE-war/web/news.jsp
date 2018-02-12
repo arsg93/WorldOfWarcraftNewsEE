@@ -52,7 +52,7 @@
                     </button>
 
 
-                    <a class="navbar-brand" href="news.html"><img id="logo" class="img-responsive" src="img/logo.png" alt="logo img"></a>
+                    <a class="navbar-brand" href="./"><img id="logo" class="img-responsive" src="img/logo.png" alt="logo img"></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -143,12 +143,10 @@
                                 <div class="caption">
                                     <h3 class="text-justify"><%=list.get(0).getTitle()%></h3>
                                 </div>
-                                <img src="img\noticias\imgmid\1m.jpg" alt="...">
+                                <img src="img\noticias\imgmid\<%=list.get(0).getId()%>.png" alt="...">
                                 <div class="caption">
-                                    <p class="text-justify">Durante el parte 7.2 podremos realizar la segunda y última parte del proceso para poder volar
-                                        en Legion donde deberemos conseguir el logro Abrecaminos de Legion Abrecaminos de las
-                                        Islas Abruptas, segunda parte.</p>
-                                    <p class="text-right"><em>28/03/2017</em></p>
+                                    <p class="text-justify"><%=list.get(0).getDescription()%></p>
+                                    <p class="text-right"><em><%=list.get(0).getDate()%></em></p>
 
                                 </div>
                             </div>
@@ -158,14 +156,12 @@
                         <a href="news2.html">
                             <div class="thumbnail">
                                 <div class="caption">
-                                    <h3 class="text-justify">¡Este mes de Mayo en WoW tenemos...!</h3>
+                                    <h3 class="text-justify"><%=list.get(1).getTitle()%></h3>
                                 </div>
-                                <img src="img\noticias\imgmid\Adivina_5_5_2017.jpg" class="wow fadeInUp" alt="...">
+                                <img src="img\noticias\imgmid\<%=list.get(1).getId()%>.png" alt="...">
                                 <div class="caption">
-                                    <p class="text-justify">El tiempo vuela cuando estás luchando contra la Legión Ardiente. A pesar de que la sombra
-                                        de la Nave de la Legión sea enorme, los campeones de Azeroth siguen luchando y aún quedan
-                                        buenos momentos por vivir, no te lo pierdas.</p>
-                                    <p class="text-right"><em>28/03/2017</em></p>
+                                    <p class="text-justify"><%=list.get(1).getDescription()%></p>
+                                    <p class="text-right"><em><%=list.get(1).getDate()%></em></p>
 
                                 </div>
                             </div>

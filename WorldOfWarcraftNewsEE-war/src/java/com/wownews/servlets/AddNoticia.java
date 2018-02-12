@@ -75,7 +75,6 @@ public class AddNoticia extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         try {
             String appPath = request.getServletContext().getRealPath("");
             String savePathBig = appPath + File.separator + SAVE_DIR_BIG;
@@ -116,8 +115,8 @@ public class AddNoticia extends HttpServlet {
 
             BufferedImage image = ImageIO.read(fileContent);
             if (image != null) {
-                File ofB = new File(savePathBig + File.separator + idNew + ".jpg");
-                File ofM = new File(savePathMid + File.separator + idNew + ".jpg");
+                File ofB = new File(savePathBig + File.separator + idNew + ".png");
+                File ofM = new File(savePathMid + File.separator + idNew + ".png");
                 OutputStream osB = new FileOutputStream(ofB);
                 OutputStream osM = new FileOutputStream(ofM);
 

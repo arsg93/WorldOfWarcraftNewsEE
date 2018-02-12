@@ -4,9 +4,17 @@
         <servlet-name>AddNoticia</servlet-name>
         <servlet-class>com.wownews.servlets.AddNoticia</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getNew</servlet-name>
+        <servlet-class>com.wownews.servlets.getNew</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddNoticia</servlet-name>
         <url-pattern>/AddNoticia</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getNew</servlet-name>
+        <url-pattern>/noticias/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -14,7 +22,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>news.html</welcome-file>
+        <welcome-file>news.jsp</welcome-file>
     </welcome-file-list>
     <security-constraint>
         <web-resource-collection>

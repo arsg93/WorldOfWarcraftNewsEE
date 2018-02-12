@@ -31,6 +31,7 @@ import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import org.jsoup.Jsoup;
 
 /**
  *
@@ -43,12 +44,24 @@ public class Presentation {
 
     public Presentation() {
         news = newsFacade.getFirstNews();
+         changeDescription();
 
     }
 
     public List<News> getNews() {
 
         return news;
+    }
+
+    private void changeDescription(){
+        for(News aux: news){
+            String desc = html2text(aux.getDescription()).substring(0,300);
+            aux.setDescription(desc.substring(0, desc.lastIndexOf(' '))+"...");
+        }
+    }
+
+    private String html2text(String html) {
+        return Jsoup.parse(html).text();
     }
 
     private NewsFacade lookupNewsFacadeBean() {

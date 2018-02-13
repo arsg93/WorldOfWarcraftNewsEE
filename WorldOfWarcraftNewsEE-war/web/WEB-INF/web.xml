@@ -8,6 +8,14 @@
         <servlet-name>getNew</servlet-name>
         <servlet-class>com.wownews.servlets.getNew</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetFirstNews</servlet-name>
+        <servlet-class>com.wownews.servlets.GetFirstNews</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetMoreNews</servlet-name>
+        <servlet-class>com.wownews.servlets.GetMoreNews</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddNoticia</servlet-name>
         <url-pattern>/AddNoticia</url-pattern>
@@ -16,13 +24,21 @@
         <servlet-name>getNew</servlet-name>
         <url-pattern>/noticias/*</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetFirstNews</servlet-name>
+        <url-pattern>/GetFirstNews</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetMoreNews</servlet-name>
+        <url-pattern>/GetMoreNews</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>news.jsp</welcome-file>
+        <welcome-file>GetFirstNews</welcome-file>
     </welcome-file-list>
     <security-constraint>
         <web-resource-collection>

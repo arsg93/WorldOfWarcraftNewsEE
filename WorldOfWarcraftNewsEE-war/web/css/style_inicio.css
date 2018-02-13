@@ -111,8 +111,12 @@
         -webkit-transition: all .6s ease;
     }
     .thumbnail h3 {
+        font-size: 1.5vw !important;
         color: #ebdec2 !important;
         font-family: 'Lato', sans-serif !important;
+    }
+    div.title{
+        height: 125px  !important;
     }
     .thumbnail p {
         color: #ebdec2 !important;

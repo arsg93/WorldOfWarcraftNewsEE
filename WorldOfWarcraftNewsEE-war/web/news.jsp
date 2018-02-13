@@ -6,11 +6,10 @@
 
 <%@page import="com.wownews.entities.News"%>
 <%@page import="java.util.List"%>
-<%@page import="com.wownews.objects.Presentation"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    Presentation p = new Presentation();
-    List<News> list = p.getNews();
+
+    List<News> list = (List<News>) request.getAttribute("News");
 
 
 %>
@@ -36,6 +35,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src='js/js_inicio.js'></script>
         <link rel="alternate" type="application/rss+xml" title="News World of Warcraft" href="rss/rss.xml">
+        <script src="js/jquery.toast.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.toast.min.css" />
+        <script>$(document).ready(function () {<%for (News aux : list) {%>
+                noticias.push(<%=aux.getId()%>);
+            <%}%>
+            });</script>
     </head>
 
     <body>
@@ -57,7 +62,7 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="news.html">Inicio</a></li>
+                        <li class="active"><a href="./">Inicio</a></li>
                         <li><a href="#">Parches</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clases <span class="caret"></span></a>
@@ -71,7 +76,7 @@
                                 <li class="blanco"><a href="#">Druida</a></li>
                             </ul>
                         </li>
-
+                        <li class="active"><a href="addnew.html">Añadir Noticia</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -138,12 +143,12 @@
             <div class="container-fluid">
                 <div class="row noticias">
                     <div class="col-sm-6 col-md-6">
-                        <a href="news1.html">
+                        <a href="noticias/<%=list.get(0).getSlug()%>">
                             <div class="thumbnail">
-                                <div class="caption">
+                                <div class="caption title">
                                     <h3 class="text-justify"><%=list.get(0).getTitle()%></h3>
                                 </div>
-                                <img src="img\noticias\imgmid\<%=list.get(0).getId()%>.png" alt="...">
+                                <img src="img/noticias/imgmid/<%=list.get(0).getId()%>.png" alt="...">
                                 <div class="caption">
                                     <p class="text-justify"><%=list.get(0).getDescription()%></p>
                                     <p class="text-right"><em><%=list.get(0).getDate()%></em></p>
@@ -153,12 +158,12 @@
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-6">
-                        <a href="news2.html">
+                        <a href="noticias/<%=list.get(1).getSlug()%>">
                             <div class="thumbnail">
-                                <div class="caption">
+                                <div class="caption title">
                                     <h3 class="text-justify"><%=list.get(1).getTitle()%></h3>
                                 </div>
-                                <img src="img\noticias\imgmid\<%=list.get(1).getId()%>.png" alt="...">
+                                <img src="img/noticias/imgmid/<%=list.get(1).getId()%>.png" alt="...">
                                 <div class="caption">
                                     <p class="text-justify"><%=list.get(1).getDescription()%></p>
                                     <p class="text-right"><em><%=list.get(1).getDate()%></em></p>
@@ -168,37 +173,35 @@
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-6">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3 class="text-justify">Avance: Bastión Nocturno</h3>
-                            </div>
-                            <img src="img\noticias\imgmid\Bastion_nocturno_11_5_2017.png" alt="...">
-                            <div class="caption">
-                                <p class="text-justify">Ocultas en los cimientos , yacen las olvidadas cámaras que dan acceso a la Fuente de la Noche.
-                                    Este monstruoso escórpido ha escogido una de estas cámaras como su hogar. Imbuido del poder
-                                    de la Fuente de la Noche, Skorpyron supone un obstáculo en la que sería una prometedora entrada
-                                    trasera.
-                                </p>
-                                <p class="text-right"><em>11/05/2017</em></p>
+                        <a href="noticias/<%=list.get(2).getSlug()%>">
+                            <div class="thumbnail">
+                                <div class="caption title">
+                                    <h3 class="text-justify"><%=list.get(2).getTitle()%></h3>
+                                </div>
+                                <img src="img/noticias/imgmid/<%=list.get(2).getId()%>.png" alt="...">
+                                <div class="caption">
+                                    <p class="text-justify"><%=list.get(2).getDescription()%>
+                                    </p>
+                                    <p class="text-right"><em><%=list.get(2).getDate()%></em></p>
 
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-sm-6 col-md-6">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3 class="text-justify">Ha llegado el Festival Lunar</h3>
-                            </div>
-                            <img src="img\noticias\imgmid\Festival_lunar_10_5_2017.png" alt="...">
-                            <div class="caption">
-                                <p class="text-justify">Cada año los druidas del Claro de la Luna celebran el gran triunfo de su ciudad sobre un antiguo
-                                    mal. Durante el Festival Lunar los ciudadanos de Azeroth tienen la oportunidad de rendir
-                                    homenaje a sus ancestros celebrando su sabiduría con magníficos festines y, por supuesto,
-                                    ¡lanzando fuegos artificiales!</p>
-                                <p class="text-right"><em>10/05/2017</em></p>
+                        <a href="noticias/<%=list.get(3).getSlug()%>">
+                            <div class="thumbnail">
+                                <div class="caption title">
+                                    <h3 class="text-justify"><%=list.get(3).getTitle()%></h3>
+                                </div>
+                                <img src="img/noticias/imgmid/<%=list.get(3).getId()%>.png" alt="...">
+                                <div class="caption">
+                                    <p class="text-justify"><%=list.get(3).getDescription()%></p>
+                                    <p class="text-right"><em><%=list.get(3).getDate()%></em></p>
 
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                 </div>

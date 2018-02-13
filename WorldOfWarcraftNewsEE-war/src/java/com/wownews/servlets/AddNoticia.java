@@ -89,32 +89,33 @@ public class AddNoticia extends HttpServlet {
             if (!fileSaveDir.exists()) {
                 fileSaveDir.mkdir();
             }
-            String title = request.getParameter("title").trim();
-            String description = request.getParameter("description");
-
-            News news = new News();
-            news.setTitle(title);
-            String slug = makeSlug(title);
-            String slugF = slug;
-            int aux = 2;
-            while (newsFacade.slugExists(slugF)) {
-                slugF = slug + aux;
-                aux++;
-            }
-            news.setSlug(slugF);
-            news.setDescription(description);
-
-            request.authenticate(response);
-            news.setUsername(request.getRemoteUser());
-            newsFacade.create(news);
-
-            String idNew = newsFacade.getBySlug(slugF).getId().toString();
 
             Part filePart = request.getPart("file");
             InputStream fileContent = filePart.getInputStream();
 
             BufferedImage image = ImageIO.read(fileContent);
             if (image != null) {
+                String title = request.getParameter("title").trim();
+                String description = request.getParameter("description");
+
+                News news = new News();
+                news.setTitle(title);
+                String slug = makeSlug(title);
+                String slugF = slug;
+                int aux = 2;
+                while (newsFacade.slugExists(slugF)) {
+                    slugF = slug + aux;
+                    aux++;
+                }
+                news.setSlug(slugF);
+                news.setDescription(description);
+
+                request.authenticate(response);
+                news.setUsername(request.getRemoteUser());
+                newsFacade.create(news);
+
+                String idNew = newsFacade.getBySlug(slugF).getId().toString();
+
                 File ofB = new File(savePathBig + File.separator + idNew + ".png");
                 File ofM = new File(savePathMid + File.separator + idNew + ".png");
                 OutputStream osB = new FileOutputStream(ofB);

@@ -32,9 +32,9 @@ public class NewsFacade extends AbstractFacade<News> {
 
     /**
      * Obtiene las 4 noticias mas nuevas.
-     * @return 
+     *
+     * @return
      */
-    
     public List<News> getFirstNews() {
         List<News> list = em.createNamedQuery("News.getByDate").setMaxResults(4).getResultList();
         return list;
@@ -61,5 +61,7 @@ public class NewsFacade extends AbstractFacade<News> {
         List<News> list = em.createNamedQuery("News.findBySlug").setParameter("slug", slug).getResultList();
         return !list.isEmpty();
     }
+    
+
 
 }

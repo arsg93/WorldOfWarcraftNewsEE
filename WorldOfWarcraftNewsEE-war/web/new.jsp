@@ -1,0 +1,173 @@
+<%-- 
+    Document   : new
+    Created on : 12-feb-2018, 12:36:36
+    Author     : admin
+--%>
+
+<%@page import="org.jsoup.Jsoup"%>
+<%@page import="java.util.List"%>
+<%@page import="com.wownews.entities.News"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    News not = (News) request.getAttribute("New");
+%>
+!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <title><%=not.getTitle()%></title>
+        <meta property="og:site_name" content="News World of Warcraft">
+        <meta property="og:url" content="https://rawgit.com/arsg93/Noticias/master/news1.html">
+        <meta property="og:title" content="<%=not.getTitle()%>">
+        <meta property="og:image" content="https://rawgit.com/arsg93/Noticias/master/img/noticias/imgbig/1m.jpg">
+        <meta property="og:description" content="<%=changeDescription(not)%>">
+        <meta name="description" content="<%=changeDescription(not)%>">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='../css/style_noticia.css'>
+
+        <link rel="icon" type="img/png" href="../img/icon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src='../js/js_noticia.js'></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top fondo" role="navigation">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+
+                    <a class="navbar-brand" href="../"><img id="logo" class="img-responsive" src="../img/logo.png" alt="logo img"></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="news.html">Inicio</a></li>
+                        <li><a href="#">Parches</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clases <span class="caret"></span></a>
+                            <ul class="dropdown-menu menu fondo" role="menu">
+                                <li class="blanco"><a href="#">Guerrero</a></li>
+                                <li class="blanco"><a href="#">Paladín</a></li>
+                                <li class="blanco"><a href="#">Cazador</a></li>
+                                <li class="blanco"><a href="#">Pícaro</a></li>
+                                <li class="blanco"><a href="#">Sacerdote</a></li>
+                                <li class="blanco"><a href="#">Brujo</a></li>
+                                <li class="blanco"><a href="#">Druida</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="../addnew.html">Añadir Noticia</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Iniciar sesión</b> <span class="caret"></span></a>
+                            <ul id="login" class="dropdown-menu menu fondo">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" id="correo" placeholder="Correo electrónico" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control" id="Password" placeholder="Contraseña" required>
+                                                    <div class="recordar text-right"><a href="">¿No puedes iniciar sesión?</a></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox"> Mantenme conectado
+                                                    </label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="bottom text-center fondo">
+                                            <a href="#"><b>Crear cuenta</b></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div class="publicidadver">
+            <img class="img-responsive center-block" src="../img/publi_vert.jpg" alt="..." id="publiver"></div>
+
+        <div id="noticias">
+            <div class="container-fluid">
+                <div class="row noticias">
+                    <div class="col-sm-12">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h1 class="text-right"><%=not.getTitle()%></h1>
+                                <p class="text-right"><em><%=not.getDate()%></em></p>
+                                <p class="text-right"><em><%=not.getUsername()%></em></p>
+                            </div>
+                            <img src="../img/noticias/imgbig/<%=not.getId()%>.png" alt="...">
+                            <div class="caption">
+                                <%=not.getDescription()%>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="publicidadhor"> <img src="../img/publi.jpg" alt="..." id="publihor"></div>
+
+        <div class="twitter"><a class="twitter-timeline" data-width="300" data-height="615" href="https://twitter.com/Warcraft_ES">Tweets by Warcraft_ES</a></div>
+        <div class="footer fondo">
+            <h4 class="seguirtitulo">Compartir Noticia</h4>
+            <ul class="list-inline">
+                <li class="seguirlink">
+                    <img class="img-responsive center-block" src="../img/facebook.png" alt="facebook logo" id="compface"/>
+                </li>
+                <li class="seguirlink">
+                    <img class="img-responsive center-block" src="../img/twitter.png" alt="twitter logo" id="comptw"/>
+                </li>
+            </ul>
+        </div>
+    </body>
+
+</html>
+
+
+<%!
+    private String changeDescription(News news) {
+
+        String desc = html2text(news.getDescription()).substring(0, 150);
+        if (desc.lastIndexOf(' ') != -1) {
+            desc = desc.substring(0, desc.lastIndexOf(' ')) + "...";
+        }
+
+        return desc;
+    }
+
+    private String html2text(String html) {
+        return Jsoup.parse(html).text();
+    }
+
+%>

@@ -1,18 +1,18 @@
 $(function () {
     $('.navbar-nav > li > a').css('line-height', '75px');
     if (window.matchMedia('(max-width: 976px)').matches) {
-        $('#publiver').attr('src', 'img/publi_vert.jpg');
+        $('#publiver').attr('src', '../img/publi_vert.jpg');
     };
     if (window.matchMedia('(max-width: 767px)').matches) {
-        $('#publiver').attr('src', 'img/publi_vert2.png');
+        $('#publiver').attr('src', '../img/publi_vert2.png');
     };
 });
 $(window).resize(function () {
     if (window.matchMedia('(max-width: 976px)').matches) {
-        $('#publiver').attr('src', 'img/publi_vert.jpg');
+        $('#publiver').attr('src', '../img/publi_vert.jpg');
     };
     if (window.matchMedia('(max-width: 767px)').matches) {
-        $('#publiver').attr('src', 'img/publi_vert2.png');
+        $('#publiver').attr('src', '../img/publi_vert2.png');
     };
 });
 $(function () {

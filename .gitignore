@@ -4,3 +4,6 @@
 /WorldOfWarcraftNewsEE-ejb/dist/
 /dist/
 /build/
+/nbproject/private/
+/WorldOfWarcraftNewsEE-war/nbproject/private/
+/WorldOfWarcraftNewsEE-ejb/nbproject/private/

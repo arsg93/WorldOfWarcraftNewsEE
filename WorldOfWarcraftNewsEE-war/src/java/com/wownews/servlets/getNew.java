@@ -71,7 +71,7 @@ public class getNew extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("/new.jsp");
                 rd.forward(request, response);
             }else{
-                response.sendRedirect("../");
+               response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
 
         } catch (ServletException e) {

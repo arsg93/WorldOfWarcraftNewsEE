@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Presentation
+    Document   : news
     Created on : 11-feb-2018, 21:54:14
     Author     : admin
 --%>
@@ -77,41 +77,6 @@
                             </ul>
                         </li>
                         <li class="active"><a href="addnew.html">Añadir Noticia</a></li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Iniciar sesión</b> <span class="caret"></span></a>
-                            <ul id="login" class="dropdown-menu menu fondo">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-12">
-
-                                            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control" id="correo" placeholder="Correo electrónico" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="password" class="form-control" id="Password" placeholder="Contraseña" required>
-                                                    <div class="recordar text-right"><a href="">¿No puedes iniciar sesión?</a></div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox"> Mantenme conectado
-                                                    </label>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="bottom text-center fondo">
-                                            <a href="#"><b>Crear cuenta</b></a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
 

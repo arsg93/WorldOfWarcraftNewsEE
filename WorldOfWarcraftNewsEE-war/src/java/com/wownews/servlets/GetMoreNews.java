@@ -29,6 +29,7 @@ import com.wownews.entities.News;
 import com.wownews.sessionBeans.NewsFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -73,7 +74,7 @@ public class GetMoreNews extends HttpServlet {
                 PrintWriter pw = response.getWriter();
                 pw.println(gson.toJson(mess));
             } else {
-                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                Gson gson = new GsonBuilder().setPrettyPrinting().setDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").create();
                 response.setContentType("application/json");
                 PrintWriter pw = response.getWriter();
                 pw.println(gson.toJson(more));

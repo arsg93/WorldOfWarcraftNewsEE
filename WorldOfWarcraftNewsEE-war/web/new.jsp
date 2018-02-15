@@ -11,7 +11,7 @@
 <%
     News not = (News) request.getAttribute("New");
 %>
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <title><%=not.getTitle()%></title>

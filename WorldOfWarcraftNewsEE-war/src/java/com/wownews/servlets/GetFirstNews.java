@@ -26,7 +26,6 @@ package com.wownews.servlets;
 import com.wownews.entities.News;
 import com.wownews.sessionBeans.NewsFacade;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;

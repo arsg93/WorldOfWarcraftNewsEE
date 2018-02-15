@@ -173,6 +173,8 @@ function addNoticia() {
     var form = $('#formAddNoticia')[0];
 
     var data = new FormData(form);
+    
+    $("#bAddNoticia").prop("disabled",true);
 
     $.ajax({
         type: "POST",
@@ -204,40 +206,7 @@ function addNoticia() {
 }
 
 
-function bs_input_file() {
-    $(".input-file").before(
-            function () {
-                if (!$(this).prev().hasClass('input-ghost')) {
-                    var element = $("<input id='fileinput' type='file' class='input-ghost' name='file'  accept='.jpg,.jpeg,.png' style='visibility:hidden; height:0' required>");
-                    element.attr("name", $(this).attr("name"));
-                    element.change(function () {
-                        element.next(element).find('input').val((element.val()).split('\\').pop());
-                    });
-                    $(this).find("button.btn-choose").click(function () {
-                        element.click();
-                    });
-                    $(this).find("button.btn-reset").click(function () {
-                        element.val(null);
-                        $(this).parents(".input-file").find('input').val('');
-                    });
-                    $(this).find('input').css("cursor", "pointer");
-                    $(this).find('input').focus(function () {
-                        $(this).parents('.input-file').prev().click();
-                        return false;
-                    });
-                    $(this).find('input').mousedown(function () {
-                        $(this).parents('.input-file').prev().click();
-                        return false;
-                    });
-                    return element;
-                }
-            }
-    );
-}
-$(function () {
-    bs_input_file();
-}
-);
+
 
 /**
  * The toast is an external librery developed by https://github.com/kamranahmedse/jquery-toast-plugin/

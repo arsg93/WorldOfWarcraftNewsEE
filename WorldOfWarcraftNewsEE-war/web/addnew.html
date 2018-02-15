@@ -21,6 +21,9 @@ and open the template in the editor.
         <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
         <script src="js/jquery.toast.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/jquery.toast.min.css" />
+        <script src='js/fileinput.min.js'></script>
+        <link rel="stylesheet" type="text/css" href="css/fileinput.min.css"> 
+
     </head>
 
     <body>
@@ -80,16 +83,11 @@ and open the template in the editor.
                     </div>
                 </div> 
                 <h4 class="seguirtitulo">Imagen de la noticia</h4>
+
                 <div id="imgUpload" class="form-group">
-                    <div class="form-group">
-                        <div class="input-group input-file">
-                            <input id="textFile" type="text" class="form-control" placeholder='Choose a file...' required/>			
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-choose" type="button">Choose</button>
-                            </span>
-                        </div>
-                    </div>
+                    <input id="fileinput" name="file" type="file" class="file" data-show-upload="false" data-show-caption="true" data-allowed-file-extensions='["jpg","png"]' required>
                 </div>
+
                 <h4 class="seguirtitulo">Contenido de la noticia</h4>
                 <div class="form-group">
                     <textarea id="contenido" name="description">

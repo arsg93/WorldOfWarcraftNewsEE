@@ -114,7 +114,7 @@ public class AddNoticia extends HttpServlet {
                 news.setUsername(request.getRemoteUser());
                 newsFacade.create(news);
 
-                String idNew = newsFacade.getBySlug(slugF).getId().toString();
+                String idNew = news.getId().toString();
 
                 File ofB = new File(savePathBig + File.separator + idNew + ".png");
                 File ofM = new File(savePathMid + File.separator + idNew + ".png");

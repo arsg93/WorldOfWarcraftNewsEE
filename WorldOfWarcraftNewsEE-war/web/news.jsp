@@ -37,10 +37,6 @@
         <link rel="alternate" type="application/rss+xml" title="News World of Warcraft" href="rss/rss.xml">
         <script src="js/jquery.toast.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/jquery.toast.min.css" />
-        <script>$(document).ready(function () {<%for (News aux : list) {%>
-                noticias.push(<%=aux.getId()%>);
-            <%}%>
-            });</script>
     </head>
 
     <body>
@@ -107,68 +103,23 @@
         <div id="noticias">
             <div class="container-fluid">
                 <div class="row noticias">
+                    <%for (News aux : list) {%>
                     <div class="col-sm-6 col-md-6">
-                        <a href="noticias/<%=list.get(0).getSlug()%>">
+                        <a href="noticias/<%=aux.getSlug()%>">
                             <div class="thumbnail">
                                 <div class="caption title">
-                                    <h3 class="text-justify"><%=list.get(0).getTitle()%></h3>
+                                    <h3 class="text-justify"><%=aux.getTitle()%></h3>
                                 </div>
-                                <img src="img/noticias/imgmid/<%=list.get(0).getId()%>.png" alt="...">
+                                <img src="img/noticias/imgmid/<%=aux.getId()%>.png" alt="...">
                                 <div class="caption">
-                                    <p class="text-justify"><%=list.get(0).getDescription()%></p>
-                                    <p class="text-right"><em><%=list.get(0).getDate()%></em></p>
+                                    <p class="text-justify"><%=aux.getDescription()%></p>
+                                    <p class="text-right"><em><%=aux.getDate()%></em></p>
 
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-sm-6 col-md-6">
-                        <a href="noticias/<%=list.get(1).getSlug()%>">
-                            <div class="thumbnail">
-                                <div class="caption title">
-                                    <h3 class="text-justify"><%=list.get(1).getTitle()%></h3>
-                                </div>
-                                <img src="img/noticias/imgmid/<%=list.get(1).getId()%>.png" alt="...">
-                                <div class="caption">
-                                    <p class="text-justify"><%=list.get(1).getDescription()%></p>
-                                    <p class="text-right"><em><%=list.get(1).getDate()%></em></p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-6">
-                        <a href="noticias/<%=list.get(2).getSlug()%>">
-                            <div class="thumbnail">
-                                <div class="caption title">
-                                    <h3 class="text-justify"><%=list.get(2).getTitle()%></h3>
-                                </div>
-                                <img src="img/noticias/imgmid/<%=list.get(2).getId()%>.png" alt="...">
-                                <div class="caption">
-                                    <p class="text-justify"><%=list.get(2).getDescription()%>
-                                    </p>
-                                    <p class="text-right"><em><%=list.get(2).getDate()%></em></p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-6">
-                        <a href="noticias/<%=list.get(3).getSlug()%>">
-                            <div class="thumbnail">
-                                <div class="caption title">
-                                    <h3 class="text-justify"><%=list.get(3).getTitle()%></h3>
-                                </div>
-                                <img src="img/noticias/imgmid/<%=list.get(3).getId()%>.png" alt="...">
-                                <div class="caption">
-                                    <p class="text-justify"><%=list.get(3).getDescription()%></p>
-                                    <p class="text-right"><em><%=list.get(3).getDate()%></em></p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
+                    <%}%>
                 </div>
             </div>
             <button onclick="cargar();" id="mas" class="btn btn-lg btn-default center-block">

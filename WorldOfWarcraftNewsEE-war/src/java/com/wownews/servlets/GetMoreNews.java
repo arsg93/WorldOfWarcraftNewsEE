@@ -54,16 +54,7 @@ public class GetMoreNews extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            List<News> more = new ArrayList<>();
-            for (Long i = Long.parseLong(request.getParameter("last"))-1; i >= 1; i--) {
-                if (newsFacade.find(i) != null) {
-                    News aux = changeTitle(changeDescription(newsFacade.find(i)));
-                    more.add(aux);
-                }
-                if (more.size() == 4) {
-                    break;
-                }
-            }
+            List<News> more = (List<News>) changeTitle(changeDescription((List<News>) newsFacade.getMoreNews(Integer.parseInt(request.getParameter("last"))*4)));
             if (more.size() == 0) {
                 Map<String, String> mess = new HashMap<>();
                 mess.put("noMore", "No hay más noticias");
@@ -92,25 +83,28 @@ public class GetMoreNews extends HttpServlet {
         }
     }
 
-    private News changeDescription(News news) {
-
-        String desc = html2text(news.getDescription()).substring(0, 300);
-        if (desc.lastIndexOf(' ') != -1) {
-            news.setDescription(desc.substring(0, desc.lastIndexOf(' ')) + "...");
+    private List<News> changeDescription(List<News> news) {
+        for (News aux : news) {
+            String desc = html2text(aux.getDescription());
+            if (desc.length() > 300) {
+                desc = desc.substring(0, 300);
+            }
+            if (desc.lastIndexOf(' ') != -1) {
+                aux.setDescription(desc.substring(0, desc.lastIndexOf(' ')) + "...");
+            }
         }
-
         return news;
     }
 
-    private News changeTitle(News news) {
-
-        if (news.getTitle().length() > 50) {
-            String desc = news.getTitle().substring(0, 50);
-            if (desc.lastIndexOf(' ') != -1) {
-                news.setTitle(desc.substring(0, desc.lastIndexOf(' ')) + "...");
+    private List<News> changeTitle(List<News> news) {
+        for (News aux : news) {
+            if (aux.getTitle().length() > 50) {
+                String desc = aux.getTitle().substring(0, 50);
+                if (desc.lastIndexOf(' ') != -1) {
+                    aux.setTitle(desc.substring(0, desc.lastIndexOf(' ')) + "...");
+                }
             }
         }
-
         return news;
     }
 

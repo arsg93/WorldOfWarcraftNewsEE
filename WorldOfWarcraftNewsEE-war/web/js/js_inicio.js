@@ -1,5 +1,4 @@
 var cargado = 1;
-var noticias = [];
 $(function () {
     $('.navbar-nav > li > a').css('line-height', '75px');
     if (window.matchMedia('(max-width: 976px)').matches) {
@@ -128,7 +127,7 @@ $(window).scroll(function () {
 
 function cargar() {
     var url = "GetMoreNews";
-    var last = noticias[noticias.length - 1];
+    var last = cargado;
     $.ajax({
         async: false,
         method: "POST",
@@ -167,7 +166,7 @@ function addrow(json) {
     '<img src="' + "img/noticias/imgmid/" + item.id + ".png" + '" alt="..." />' +
           '<div class="caption">' + '<p class="text-justify">' + item.description + "</p>" +
         '<p class="text-right">' + "<em>" + item.date + "</em>" + "</p>" + "</div>" + "</div>" +"</a>" + "</div>");
-        noticias.push(item.id);
+        cargado++;
     })
 }
 ;

@@ -41,6 +41,16 @@ public class NewsFacade extends AbstractFacade<News> {
     }
 
     /**
+     * Obtiene 4 noticias más.
+     *
+     * @return
+     */
+    public List<News> getMoreNews(int first) {
+        List<News> list = em.createNamedQuery("News.getByDate").setMaxResults(4).setFirstResult(first).getResultList();
+        return list;
+    }
+
+    /**
      * Obtiene por Slug.
      *
      * @param slug
@@ -61,7 +71,5 @@ public class NewsFacade extends AbstractFacade<News> {
         List<News> list = em.createNamedQuery("News.findBySlug").setParameter("slug", slug).getResultList();
         return !list.isEmpty();
     }
-    
-
 
 }

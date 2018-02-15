@@ -13,20 +13,18 @@
 %>
 !DOCTYPE html>
 <html lang="es">
-
     <head>
         <title><%=not.getTitle()%></title>
         <meta property="og:site_name" content="News World of Warcraft">
-        <meta property="og:url" content="https://rawgit.com/arsg93/Noticias/master/news1.html">
+        <meta property="og:url" content="http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-war/noticias/<%=not.getSlug()%>">
         <meta property="og:title" content="<%=not.getTitle()%>">
-        <meta property="og:image" content="https://rawgit.com/arsg93/Noticias/master/img/noticias/imgbig/1m.jpg">
+        <meta property="og:image" content="http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-war/img/noticias/imgbig/<%=not.getId()%>.png">
         <meta property="og:description" content="<%=changeDescription(not)%>">
         <meta name="description" content="<%=changeDescription(not)%>">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='../css/style_noticia.css'>
-
-        <link rel="icon" type="img/png" href="../img/icon.png" />
+        <link rel="icon" type="image/png" href="http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-war/img/icon.png" />
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -54,7 +52,7 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="news.html">Inicio</a></li>
+                        <li class="active"><a href="../">Inicio</a></li>
                         <li><a href="#">Parches</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clases <span class="caret"></span></a>

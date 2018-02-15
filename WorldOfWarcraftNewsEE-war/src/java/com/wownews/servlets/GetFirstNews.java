@@ -57,7 +57,10 @@ public class GetFirstNews extends HttpServlet {
 
     private List<News> changeDescription(List<News> news) {
         for (News aux : news) {
-            String desc = html2text(aux.getDescription()).substring(0, 300);
+            String desc = html2text(aux.getDescription());
+            if(desc.length()>300){
+                desc = desc.substring(0, 300);
+            }
             if (desc.lastIndexOf(' ') != -1) {
                 aux.setDescription(desc.substring(0, desc.lastIndexOf(' ')) + "...");
             }

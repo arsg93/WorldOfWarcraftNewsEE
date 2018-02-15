@@ -133,7 +133,11 @@ $(document).ready(function () {
     initTextArea();
 
     $("#formAddNoticia").submit(function () {
-        addNoticia();
+        if (tinymce.activeEditor.getContent().length > 0) {
+            addNoticia();
+        } else {
+            showToast("Contenido vacio", "Complete el campo", "warning", "#D43721");
+        }
         return false;
     });
 
@@ -165,13 +169,10 @@ function initTextArea() {
 
 function addNoticia() {
     $("#divCargando").fadeIn(400);
-    event.preventDefault();
 
     var form = $('#formAddNoticia')[0];
 
     var data = new FormData(form);
-
-    $("#bAddNoticia").prop("disabled", true);
 
     $.ajax({
         type: "POST",
@@ -197,6 +198,7 @@ function addNoticia() {
 
         }
     });
+
 
 }
 

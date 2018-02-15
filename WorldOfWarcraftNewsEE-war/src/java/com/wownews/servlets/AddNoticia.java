@@ -66,8 +66,8 @@ public class AddNoticia extends HttpServlet {
 
     @EJB
     private NewsFacade newsFacade;
-    private static final String SAVE_DIR_BIG = "img\\noticias\\imgbig";
-    private static final String SAVE_DIR_MID = "img\\noticias\\imgmid";
+    private static final String SAVE_DIR_BIG = "img"+File.separator+"noticias"+File.separator+"imgbig";
+    private static final String SAVE_DIR_MID = "img"+File.separator+"noticias"+File.separator+"imgmid";
     private static final Pattern NONLATIN = Pattern.compile("[^\\w-]");
     private static final Pattern WHITESPACE = Pattern.compile("[\\s]");
 

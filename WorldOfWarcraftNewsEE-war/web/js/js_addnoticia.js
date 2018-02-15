@@ -187,6 +187,7 @@ function addNoticia() {
         success: function (rsp) {
             $("#divCargando").fadeOut(400);
             showToast("Successfull", rsp["mess"], "success", "#36B62D");
+            form.reset();
         },
         error: function (e) {
             $("#divCargando").fadeOut(400);

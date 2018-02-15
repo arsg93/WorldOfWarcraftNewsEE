@@ -19,9 +19,9 @@
     <head>
         <title>News World of Warcraft</title>
         <meta property="og:site_name" content="News World of Warcraft">
-        <meta property="og:url" content="https://rawgit.com/arsg93/Noticias/master/news.html">
+        <meta property="og:url" content="http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-war/">
         <meta property="og:title" content="News World of Warcraft">
-        <meta property="og:image" content="https://rawgit.com/arsg93/Noticias/master/img/icon.png">
+        <meta property="og:image" content="http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-war/img/icon.png">
         <meta property="og:description" content="Ultimas noticias y novedades sobre World of Warcraft.">
         <meta name="description" content="Ultimas noticias y novedades sobre World of Warcraft.">
         <meta charset="UTF-8">

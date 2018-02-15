@@ -140,7 +140,7 @@ function cargar() {
                 showToast("Cargado", "Cargado correctamente", "success", "#36B62D");
 
             } else {
-                showToast(rsp["noMore"], "No hay más noticias", "success", "#36B62D");
+                showToast(rsp["noMore"], "No hay más noticias", "success", "#06493C");
                 $('#mas').text('No hay más noticias');
             }
         },
@@ -197,7 +197,7 @@ function showToast(head, text, icon, bgColor) {
         icon: icon, // Type of toast icon: warning | success | error | info
         showHideTransition: 'fade', // fade, slide or plain
         allowToastClose: false, // Boolean value true or false
-        hideAfter: 3000, // false to make it sticky or number representing the miliseconds as time after which toast needs to be hidden
+        hideAfter: 2000, // false to make it sticky or number representing the miliseconds as time after which toast needs to be hidden
         position: 'top-center', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
         textAlign: 'left', // Text alignment i.e. left, right or center
         loader: true, // Whether to show loader or not. True by default

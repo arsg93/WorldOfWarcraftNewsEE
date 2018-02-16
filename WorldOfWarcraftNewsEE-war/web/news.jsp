@@ -72,7 +72,7 @@
                                 <li class="blanco"><a href="#">Druida</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="addnew.html">Añadir Noticia</a></li>
+                        <li class="active"><a href="../WorldOfWarcraftNewsEEAdmin-war">Modo Desarrollo</a></li>
                     </ul>
                 </div>
 
@@ -110,7 +110,7 @@
                                 <div class="caption title">
                                     <h3 class="text-justify"><%=aux.getTitle()%></h3>
                                 </div>
-                                <img src="img/noticias/imgmid/<%=aux.getId()%>.png" alt="...">
+                                <img src="res/img/noticias/imgMid/<%=aux.getId()%>.png" alt="...">
                                 <div class="caption">
                                     <p class="text-justify"><%=aux.getDescription()%></p>
                                     <p class="text-right"><em><%=aux.getDate()%></em></p>

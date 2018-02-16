@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="News World of Warcraft">
         <meta property="og:url" content="http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-war/noticias/<%=not.getSlug()%>">
         <meta property="og:title" content="<%=not.getTitle()%>">
-        <meta property="og:image" content="http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-war/img/noticias/imgbig/<%=not.getId()%>.png">
+        <meta property="og:image" content="http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-war/res/img/noticias/imgBig/<%=not.getId()%>.png">
         <meta property="og:description" content="<%=changeDescription(not)%>">
         <meta name="description" content="<%=changeDescription(not)%>">
         <meta charset="UTF-8">
@@ -66,7 +66,7 @@
                                 <li class="blanco"><a href="#">Druida</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="../addnew.html">Añadir Noticia</a></li>
+                        <li class="active"><a href="../WorldOfWarcraftNewsEEAdmin-war">Modo Desarrollo</a></li>
                     </ul>
                 </div>
 
@@ -87,7 +87,7 @@
                                 <p class="text-right"><em><%=not.getDate()%></em></p>
                                 <p class="text-right"><em><%=not.getUsername()%></em></p>
                             </div>
-                            <img src="../img/noticias/imgbig/<%=not.getId()%>.png" alt="...">
+                            <img src="../res/img/noticias/imgBig/<%=not.getId()%>.png" alt="...">
                             <div class="caption">
                                 <%=not.getDescription()%>
 

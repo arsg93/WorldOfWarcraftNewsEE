@@ -1,4 +1,4 @@
-@media(min-width:977px) {
+@media(min-width:987px) {
     body {
         background: url(../img/bg.jpg) no-repeat center fixed;
         -webkit-background-size: 100%;
@@ -156,7 +156,7 @@
         -webkit-text-fill-color: transparent;
     }
 }
-@media(max-width:976px) {
+@media(max-width:986px) {
     body {
         background: url(../img/bg.jpg) no-repeat center center fixed;
         -webkit-background-size: 100%;

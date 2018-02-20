@@ -53,8 +53,8 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="../">Inicio</a></li>
-                        <li class="active"><a href="./addnew.html">Añadir Noticia</a></li>
-                        <li class="active"><a href="../WorldOfWarcraftNewsEE-war">Modo Cliente</a></li>
+                        <li class="active"><a href="../addnew.html">Añadir Noticia</a></li>
+                        <li class="active"><a href="../../WorldOfWarcraftNewsEE-war">Modo Cliente</a></li>
                     </ul>
                 </div>
 

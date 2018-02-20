@@ -66,7 +66,7 @@
                                 <li class="blanco"><a href="#">Druida</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="../WorldOfWarcraftNewsEEAdmin-war">Modo Desarrollo</a></li>
+                        <li class="active"><a href="../../WorldOfWarcraftNewsEEAdmin-war">Modo Desarrollo</a></li>
                     </ul>
                 </div>
 

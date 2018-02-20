@@ -163,7 +163,7 @@ function addrow(json) {
                 '<a href="noticias/'+item.slug+'">' +
 '<div class="thumbnail">' +
     '<div class="caption title">' + '<h3 class="text-justify">' + item.title + "</h3>" + "</div>" +
-    '<img src="' + "img/noticias/imgmid/" + item.id + ".png" + '" alt="..." />' +
+    '<img src="' + "res/img/noticias/imgMid/" + item.id + ".png" + '" alt="..." />' +
           '<div class="caption">' + '<p class="text-justify">' + item.description + "</p>" +
         '<p class="text-right">' + "<em>" + item.date + "</em>" + "</p>" + "</div>" + "</div>" +"</a>" + "</div>");
         cargado++;

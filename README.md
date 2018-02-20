@@ -10,7 +10,7 @@ TRY [HERE](http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-w
 
 Java EE project on a news website, where you can add new and visualize them using jsp.
 
-## Doings
+## Done
 
 <ul>
 <li>The page manage news using EJB i PostGreSQL</li>

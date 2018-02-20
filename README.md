@@ -5,6 +5,7 @@ Project base:https://github.com/arsg93/Noticias by [arsg93](https://github.com/a
 
 TRY [HERE](http://news1.news80103.private.jelastic.cloud/WorldOfWarcraftNewsEE-war/) 
 
+Read the documentation [here](https://github.com/arsg93/WorldOfWarcraftNewsEE/blob/master/WorldOfWarcraftNewsEEDocument.pdf).
 
 ## Description
 

@@ -28,22 +28,23 @@ Java EE project on a news website, where you can add new and visualize them usin
 ## Changelog
 
 
-v0 - The repository has been created forked from the project base 
+v0 - The repository has been created forked from the project base.
      [Noticias](https://github.com/arsg93/Noticias)
      by [arsg93](https://github.com/arsg93)
 
-v1 - Data base definition and JPA entities with controllers created
+v1 - Data base definition and EJB created.
 
-v2 - Has been created the page to add news and works correctly
+v2 - Has been created the page to add news with TinyMCE and FileInput.
 
-v3 - Has been the jsp to see all the news and works correctly
+v3 - Has been the jsp to see all the news and works correctly.
 
-v4 - Has been the see a news item in detail and works correctly
+v4 - Has been the see a news item in detail and works correctly.
 
-v5 - The links to share on social networks have been edited
+v5 - The links to share on social networks have been edited.
 
-v6 - A new war has been created which only contains the actions of the standard user
+v6 - A new WAR has been created which only contains the actions of the standard user.
 
-v7 - Access restrictions have been added to the entire Admins war with Glassfish
+v7 - Access restrictions have been added to the entire Admins war with Glassfish.
 
 v8 - A shared resource has been added in Glassfish to allow viewing of the image folder between the WARs.
+
